@@ -80,28 +80,16 @@ git clone <your-repo-url>
 cd home-stay
 ```
 
-3. Install dependencies
+3. Install dependencies, build the app & Start development server
 
 ```bash
-npm install
+npm run setup
 ```
 
-4. Start development server
-
-```bash
-npm run dev
-```
-
-5. Open in browser
+4. Open in browser
 
 - Vite will print local URL (usually `http://localhost:5173`)
 
-## Build and Lint
-
-```bash
-npm run lint
-npm run build
-```
 
 ## Notes for Future Backend Work
 
