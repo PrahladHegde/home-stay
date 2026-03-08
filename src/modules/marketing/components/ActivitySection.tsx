@@ -22,6 +22,18 @@ export function ActivitySection() {
         viewport={{ once: true, amount: 0.35 }}
         className="relative z-10 mx-auto max-w-3xl px-4 text-center text-white sm:px-6"
       >
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05, duration: 0.4 }}
+          viewport={{ once: true }}
+          className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-beige/40 bg-brand-beige/15 px-4 py-1.5 backdrop-blur-sm"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-brand-beige" />
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-beige">
+            Coming Soon
+          </span>
+        </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

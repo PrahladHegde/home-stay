@@ -45,7 +45,7 @@ export function AllRoomsPage() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ type: 'spring', stiffness: 100, damping: 13, delay: index * 0.1 }}
               viewport={{ once: true, amount: 0.32 }}
-              className="overflow-hidden rounded-2xl border border-brand-dark/10 bg-white shadow-sm"
+              className="flex flex-col overflow-hidden rounded-2xl border border-brand-dark/10 bg-white shadow-sm"
             >
               <div className="relative h-72">
                 <img
@@ -55,29 +55,22 @@ export function AllRoomsPage() {
                   decoding="async"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute left-3 top-3 rounded-full bg-brand-dark/90 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white">
+                {/* <div className="absolute left-3 top-3 rounded-full bg-brand-dark/90 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white">
                   {new Intl.NumberFormat('en-IN', {
                     style: 'currency',
                     currency: 'INR',
                     maximumFractionDigits: 0,
                   }).format(room.pricePerNightInr)}{' '}
                   / Night
-                </div>
+                </div> */}
               </div>
 
-              <div className="space-y-4 p-5">
+              <div className="flex flex-1 flex-col p-5">
                 <h3 className="font-serif text-2xl text-brand-dark">{room.title}</h3>
-                <p className="text-sm text-brand-text">
+                <p className="mt-4 flex-1 text-sm text-brand-text">
                   {room.mainFeature ?? roomSectionContent.fallbackMainFeature}
                 </p>
-                {room.starRating ? (
-                  <div className="inline-flex items-center gap-1 rounded-full bg-brand-light px-3 py-1 text-brand-dark">
-                    {Array.from({ length: room.starRating }).map((_, ratingIndex) => (
-                      <Star key={ratingIndex} size={13} fill="currentColor" />
-                    ))}
-                  </div>
-                ) : null}
-                <div>
+                <div className="mt-4">
                   <Button
                     variant="primary"
                     className="px-4 py-2 text-xs"

@@ -1,8 +1,8 @@
 import type { MarketingNavLink, Room } from '../types';
 
 export const propertyConfig = {
-  name: 'NO NAME HOMESTAY',
-  location: 'Riverside Valley, Karnataka',
+  name: 'MALENADU HOMESTAY',
+  location: 'Thirthahalli',
   description:
     'Experience the perfect blend of nature and luxury at No Name Homestay. Nestled on the serene shores of a pristine lake, our homestay offers an escape from the ordinary. We focus on sustainability, luxury, and authentic local experiences. Whether you are hiking the nearby trails or relaxing in our spa, you will find peace here.',
 }
@@ -10,15 +10,15 @@ export const propertyConfig = {
 export const siteConfig = {
   propertyName: propertyConfig.name,
   copyrightText: `(c) ${new Date().getFullYear()} ${propertyConfig.name}. All rights reserved.`,
-  footerTagline: 'Designed for the future.',
+  footerTagline: 'Where nature meets comfort, and memories are made.',
 };
 
 export const bookingFormUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLScExampleBookingFormUrl/viewform';
 
 export const heroContent = {
-  eyebrow: 'The Ultimate Luxury Experience',
-  title: 'A Perfect Holiday Destination',
+  eyebrow: 'The Ultimate Malenadu Experience',
+  title: 'A peaceful homestay in the heart of Malenadu',
   primaryCtaLabel: 'Take a Tour',
   bookingCtaLabel: 'Book Rooms',
 };
@@ -27,15 +27,16 @@ export const marketingNavLinks: MarketingNavLink[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Rooms', href: '#rooms' },
+  { label: 'Event Space', href: '#hall-showcase' },
   { label: 'Activities', href: '#activities' },
   { label: 'Contact', href: '#find-us' },
 ];
 
 export const aboutContent = {
   sectionTitle: 'Enjoy Your Stay',
-  sectionSubtitle: 'About Us',
+  sectionSubtitle: 'About Homestay',
   description:
-    'Set on the shores of a pristine lake, our homestay offers an escape from the ordinary. We focus on sustainability, luxury, and authentic local experiences. Whether you are hiking the nearby trails or relaxing in our spa, you will find peace here.',
+    'This homestay was born from a deep love for the rains, forests, and quiet life of Thirthahalli. Growing up with the beauty of the Malnad region, I wanted to create a place where others could slow down, breathe fresh air, and experience the charm of this land. Our home is not just a stay—it’s a small window into the peaceful rhythm of Malenadu.',
   imageUrl:
     'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop',
   imageAlt: 'Hotel View',
@@ -50,12 +51,73 @@ export const aboutContent = {
   },
 };
 
+export const hallContent = {
+  sectionId: 'hall-showcase',
+  eyebrow: 'Event Space',
+  title: 'Celebrate With Us',
+  description:
+    'Our hall is a spacious and welcoming venue for celebrations, ceremonies, family gatherings, and special occasions. Whether it is a birthday, engagement, naming ceremony, or a small get-together, it offers the perfect setting in a peaceful homestay atmosphere.',
+  ctaLabel: 'View More Details',
+  ctaLink: '/hall',
+  bookingCtaLabel: 'Enquire Now',
+  imageUrl:
+    'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop',
+  imageAlt: 'Hall available for celebrations and ceremonies at the homestay',
+};
+
+export const hallDetailsContent = {
+  backToHomeLabel: 'Back to Home',
+  hero: {
+    title: 'Celebration Hall',
+    subtitle: 'A spacious and welcoming hall for ceremonies, celebrations, and special family gatherings.',
+  },
+  overview: {
+    sectionLabel: 'Description',
+    title: 'Hall Overview',
+    text: 'Our hall is designed for memorable celebrations in a warm and homely setting. With spacious interiors, comfortable surroundings, and a peaceful atmosphere, it is an ideal venue for birthdays, engagements, naming ceremonies, family functions, and small gatherings.',
+  },
+  mainFeatures: [
+    'Spacious venue ideal for celebrations, ceremonies, and gatherings',
+    'Bright and comfortable interiors with a warm, welcoming feel',
+    'Peaceful homestay setting for memorable family occasions',
+  ],
+  suitableFor: [
+    'Birthdays',
+    'Engagements',
+    'Naming ceremonies',
+    'Family gatherings',
+    'Small celebrations',
+    'Get-togethers',
+  ],
+  amenities: [
+    'Dining access available',
+    'Comfortable seating and gathering space',
+    'Homely and peaceful atmosphere',
+    'Easy access within the homestay property',
+  ],
+  galleryImages: [
+    'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1478146896981-b80fe463b330?q=80&w=2070&auto=format&fit=crop',
+  ],
+  cta: {
+    title: 'Book This Hall',
+    text: 'Contact us to check availability and plan your celebration with us.',
+    buttonLabel: 'Enquire Now',
+  },
+  mainFeaturesTitle: 'Main Features',
+  suitableForTitle: 'Suitable For',
+  amenitiesTitle: 'Amenities',
+  galleryTitle: 'Hall Gallery',
+  gallerySubtitle: 'Photos',
+};
+
 export const activityContent = {
   title: 'Activities and Excursions',
   description:
-    'Discover curated local trails, private lake experiences, and seasonal culinary events designed around your stay.',
+    'Discover curated local trails, private local experiences, and seasonal events designed around your stay.',
   backgroundImageUrl:
-    'https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?q=80&w=2070&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071&auto=format&fit=crop',
 };
 
 export const roomSectionContent = {
@@ -98,14 +160,14 @@ export const contactContent = {
       type: 'map',
       title: 'Map',
       mobileTone: 'from-amber-50 to-orange-100',
-      lines: ['Lakefront Road 27, Riverside Valley, Karnataka 560001'],
-      link: { label: 'Open in Maps', href: 'https://maps.app.goo.gl/LaYa7CZoLtXz5ycb6' },
+      lines: ['KEB, opp. Raghavendra Extension, Soppugudde, Thirthahalli, Karnataka 577432'],
+      link: { label: 'Open in Maps', href: 'https://maps.app.goo.gl/iyd53j4kA59Vdoc28' },
     },
     {
       type: 'phone',
       title: 'Phone',
       mobileTone: 'from-blue-50 to-cyan-100',
-      lines: ['Reservations: +91 98765 43210', 'Front Desk: +91 99887 77665'],
+      lines: ['+91-9741613049'],
     },
     {
       type: 'email',
@@ -128,8 +190,8 @@ export const contactContent = {
 export const roomInventory: Room[] = [
   {
     id: 1,
-    slug: 'deluxe-ocean-view',
-    title: 'Deluxe Ocean View',
+    slug: 'premium-suite',
+    title: 'Premium Suite',
     pricePerNightInr: 20000,
     galleryImages: [
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop',
@@ -137,19 +199,21 @@ export const roomInventory: Room[] = [
       'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?q=80&w=2069&auto=format&fit=crop',
     ],
     description:
-      'A light-filled room with uninterrupted sea views, handcrafted interiors, and a private balcony for sunset evenings.',
+      'A spacious and elegant suite designed for a relaxed premium stay, with abundant natural light, cozy interiors, and a calm homely feel. Ideal for guests who want added comfort with air conditioning and thoughtfully designed spaces.',
     amenities: [
-      { label: 'High-speed Wi-Fi', icon: 'wifi' },
+      { label: 'Air conditioned room', icon: 'ac' },
       { label: 'King size bed', icon: 'bed' },
-      { label: 'Private ocean-facing balcony', icon: 'view' },
-      { label: 'Smart TV with OTT apps', icon: 'tv' },
-      { label: 'Rain shower bathroom', icon: 'bath' },
-      { label: 'In-room minibar', icon: 'food' },
+      { label: 'Complimentary breakfast', icon: 'food' },
+      { label: 'Wi-Fi', icon: 'wifi' },
+      { label: '24x7 hot water', icon: 'bath' },
+      { label: 'Fridge', icon: 'food' },
+      { label: 'Kettle', icon: 'coffee' },
+      { label: 'Access to kitchen area, lounge, and dining space', icon: 'users' },
     ],
     mainFeatures: [
-      'Panoramic balcony facing the sea',
-      'Premium handcrafted interiors',
-      'Dedicated work corner with charging dock',
+      'Air-conditioned comfort for a relaxed premium stay',
+      'Spacious interiors with abundant natural light',
+      'Cozy king-size bed with elegant homely ambience',
     ],
     checkInTime: '2:00 PM',
     checkOutTime: '11:00 AM',
@@ -163,138 +227,144 @@ export const roomInventory: Room[] = [
       'Free cancellation up to 72 hours before check-in.',
       'Any damage to room assets will be chargeable.',
     ],
-    mainFeature: 'Panoramic balcony view',
+    mainFeature: 'Elegant air-conditioned suite for a premium experience',
     starRating: 5,
-    tags: ['King Bed', 'Private Balcony'],
+    tags: ['King Bed', 'Air Conditioned', 'Breakfast Included'],
     imageUrl:
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop',
   },
   {
     id: 2,
-    slug: 'superior-forest-cabin',
-    title: 'Superior Forest Cabin',
-    pricePerNightInr: 35000,
+    slug: 'double-bedroom',
+    title: 'Double Bedroom',
+    pricePerNightInr: 18000,
     galleryImages: [
       'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1974&auto=format&fit=crop',
     ],
     description:
-      'An intimate cabin experience surrounded by trees, designed for guests who want calm mornings and private evenings.',
+      'A warm and comfortable double bedroom with good natural light, spacious interiors, and a cozy atmosphere that makes guests feel at home. Perfect for a peaceful stay with all essential comforts.',
     amenities: [
-      { label: 'Forest-facing deck', icon: 'view' },
-      { label: 'Fireplace setup', icon: 'ac' },
+      { label: 'Air conditioned room', icon: 'ac' },
+      { label: 'King size bed', icon: 'bed' },
       { label: 'Complimentary breakfast', icon: 'food' },
-      { label: 'Espresso machine', icon: 'coffee' },
-      { label: 'Hot water 24/7', icon: 'bath' },
-      { label: 'Workspace corner', icon: 'users' },
+      { label: 'Wi-Fi', icon: 'wifi' },
+      { label: '24x7 hot water', icon: 'bath' },
+      { label: 'Fridge', icon: 'food' },
+      { label: 'Kettle', icon: 'coffee' },
+      { label: 'Access to kitchen area, lounge, and dining space', icon: 'users' },
     ],
     mainFeatures: [
-      'Secluded setting for peaceful stays',
-      'Private firepit-ready deck',
-      'Warm ambient lighting and wood accents',
+      'Comfortable air-conditioned room for restful stays',
+      'Bright and airy space with cozy interiors',
+      'King-size bed ideal for couples or solo guests',
     ],
-    checkInTime: '1:00 PM',
+    checkInTime: '2:00 PM',
     checkOutTime: '11:00 AM',
     rules: [
-      'Outdoor firepit usage only under staff supervision.',
-      'Maximum occupancy is 3 guests.',
-      'No loud music after 9:30 PM.',
+      'No smoking inside the room.',
+      'Pets are not allowed in this category.',
+      'Quiet hours start from 10:00 PM.',
     ],
     termsAndConditions: [
-      '25% non-refundable prepayment is required.',
-      'Date modifications are subject to availability.',
-      'Government-issued ID is mandatory at check-in.',
+      '50% advance payment is required to confirm booking.',
+      'Free cancellation up to 72 hours before check-in.',
+      'Any damage to room assets will be chargeable.',
     ],
-    mainFeature: 'Private deck with firepit',
+    mainFeature: 'Comfortable and inviting atmosphere',
     starRating: 4,
-    tags: ['Nature-facing', 'Fireplace'],
+    tags: ['King Bed', 'Air Conditioned', 'Breakfast Included'],
     imageUrl:
       'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025&auto=format&fit=crop',
   },
   {
     id: 3,
-    slug: 'royal-suite',
-    title: 'Royal Suite',
-    pricePerNightInr: 50000,
+    slug: 'family-room',
+    title: 'Family Room',
+    pricePerNightInr: 22000,
     galleryImages: [
       'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1974&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2070&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop',
     ],
     description:
-      'Our most expansive suite with a private lounge, premium bath setup, and personalized in-room hospitality service.',
+      'A large, welcoming family room with generous space, good light, and a cozy atmosphere for a comfortable stay. Designed to bring together comfort and convenience, it is perfect for families looking for a homely retreat.',
     amenities: [
-      { label: 'Dedicated lounge area', icon: 'users' },
-      { label: 'Butler-on-call', icon: 'food' },
-      { label: 'Premium bath amenities', icon: 'bath' },
-      { label: 'Mini dining table', icon: 'coffee' },
-      { label: 'Smart climate control', icon: 'ac' },
-      { label: 'Luxury linen collection', icon: 'bed' },
+      { label: 'Spacious family-friendly layout', icon: 'users' },
+      { label: 'Fan', icon: 'ac' },
+      { label: 'Complimentary breakfast', icon: 'food' },
+      { label: 'Wi-Fi', icon: 'wifi' },
+      { label: '24x7 hot water', icon: 'bath' },
+      { label: 'Fridge', icon: 'food' },
+      { label: 'Kettle', icon: 'coffee' },
+      { label: 'Access to kitchen area, lounge, and dining space', icon: 'users' },
     ],
     mainFeatures: [
-      'Large suite with private lounge',
-      'Personalized hospitality support',
-      'Premium bath and sleep experience',
+      'Spacious family-friendly layout with a separate space for infants or kids',
+      'Bright, airy interiors with a warm and cozy feel',
+      'Comfortable setting ideal for longer, relaxed family stays',
     ],
     checkInTime: '2:00 PM',
-    checkOutTime: '12:00 PM',
+    checkOutTime: '11:00 AM',
     rules: [
-      'Parties and events are not permitted in-suite.',
-      'Outside visitors are allowed until 8:00 PM only.',
-      'Pets are allowed on prior request.',
+      'No smoking inside the room.',
+      'Pets are not allowed in this category.',
+      'Quiet hours start from 10:00 PM.',
     ],
     termsAndConditions: [
-      'Full refund if cancelled 5 days before check-in.',
-      'Early check-in is chargeable and subject to occupancy.',
-      'Management reserves right to deny entry for policy violations.',
+      '50% advance payment is required to confirm booking.',
+      'Free cancellation up to 72 hours before check-in.',
+      'Any damage to room assets will be chargeable.',
     ],
-    mainFeature: 'Curated lounge and dining area',
-    starRating: 5,
-    tags: ['Butler Service', 'Premium Bath'],
+    mainFeature: 'Spacious family-friendly layout',
+    starRating: 4,
+    tags: ['Family Room', 'Spacious', 'Breakfast Included'],
     imageUrl:
       'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1974&auto=format&fit=crop',
   },
   {
     id: 4,
-    slug: 'royal-suite-4',
-    title: 'Royal Suite 4',
-    pricePerNightInr: 50000,
+    slug: 'twin-bed-room',
+    title: 'Twin Bed Room',
+    pricePerNightInr: 16000,
     galleryImages: [
       'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1974&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2070&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop',
     ],
     description:
-      'Our most expansive suite with a private lounge, premium bath setup, and personalized in-room hospitality service.',
+      'A bright and spacious twin bed room designed for convenience and comfort, offering a cozy setting for shared stays. Its practical layout and peaceful ambiance make it ideal for friends or travel companions.',
     amenities: [
-      { label: 'Dedicated lounge area', icon: 'users' },
-      { label: 'Butler-on-call', icon: 'food' },
-      { label: 'Premium bath amenities', icon: 'bath' },
-      { label: 'Mini dining table', icon: 'coffee' },
-      { label: 'Smart climate control', icon: 'ac' },
-      { label: 'Luxury linen collection', icon: 'bed' },
+      { label: 'Twin beds', icon: 'bed' },
+      { label: 'Fan', icon: 'ac' },
+      { label: 'Complimentary breakfast', icon: 'food' },
+      { label: 'Wi-Fi', icon: 'wifi' },
+      { label: '24x7 hot water', icon: 'bath' },
+      { label: 'Fridge', icon: 'food' },
+      { label: 'Kettle', icon: 'coffee' },
+      { label: 'Access to kitchen area, lounge, and dining space', icon: 'users' },
     ],
     mainFeatures: [
-      'Large suite with private lounge',
-      'Personalized hospitality support',
-      'Premium bath and sleep experience',
+      'Spacious shared room with comfortable twin beds',
+      'Good natural light and a calm cozy setting',
+      'Practical layout ideal for friends or travel companions',
     ],
     checkInTime: '2:00 PM',
-    checkOutTime: '12:00 PM',
+    checkOutTime: '11:00 AM',
     rules: [
-      'Parties and events are not permitted in-suite.',
-      'Outside visitors are allowed until 8:00 PM only.',
-      'Pets are allowed on prior request.',
+      'No smoking inside the room.',
+      'Pets are not allowed in this category.',
+      'Quiet hours start from 10:00 PM.',
     ],
     termsAndConditions: [
-      'Full refund if cancelled 5 days before check-in.',
-      'Early check-in is chargeable and subject to occupancy.',
-      'Management reserves right to deny entry for policy violations.',
+      '50% advance payment is required to confirm booking.',
+      'Free cancellation up to 72 hours before check-in.',
+      'Any damage to room assets will be chargeable.',
     ],
-    mainFeature: 'Curated lounge and dining area',
-    starRating: 5,
-    tags: ['Butler Service', 'Premium Bath'],
+    mainFeature: 'Spacious twin bed setup for shared stays',
+    starRating: 4,
+    tags: ['Twin Beds', 'Shared Room', 'Breakfast Included'],
     imageUrl:
       'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1974&auto=format&fit=crop',
   },

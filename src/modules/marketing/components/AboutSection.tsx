@@ -24,7 +24,7 @@ export const AboutSection = () => {
             <p className="text-brand-text leading-relaxed mb-6 font-sans">
               {aboutContent.description}
             </p>
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            {/* <div className="grid grid-cols-2 gap-4 mt-8">
               {aboutContent.stats.map((stat) => (
                 <motion.div
                   key={stat.label}
@@ -39,7 +39,7 @@ export const AboutSection = () => {
                   <span className="text-sm uppercase tracking-widest">{stat.label}</span>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <motion.div
@@ -56,7 +56,7 @@ export const AboutSection = () => {
               decoding="async"
               className="w-full h-auto shadow-lg"
             />
-            <div className="absolute -top-10 -right-10 bg-brand-beige p-8 text-white text-center shadow-lg hidden md:block">
+            {/* <div className="absolute -top-10 -right-10 bg-brand-beige p-8 text-white text-center shadow-lg hidden md:block">
               <span className="text-5xl font-serif font-bold">{aboutContent.userRating.value}</span>
               <div className="flex justify-center my-2">
                 {Array.from({ length: aboutContent.userRating.stars }).map((_, index) => (
@@ -64,7 +64,7 @@ export const AboutSection = () => {
                 ))}
               </div>
               <span className="text-xs uppercase tracking-widest">{aboutContent.userRating.label}</span>
-            </div>
+            </div> */}
           </motion.div>
 
         </div>

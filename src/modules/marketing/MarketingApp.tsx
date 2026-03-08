@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { ActivitySection } from './components/ActivitySection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { HallSection } from './components/HallSection';
 import { HeroSection } from './components/HeroSection';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { TopNav } from './components/TopNav';
@@ -67,6 +68,7 @@ export function MarketingApp() {
       <Suspense fallback={<SectionLoader />}>
         <RoomShowcase />
       </Suspense>
+      <HallSection />
       <ActivitySection />
       <ContactSection />
       <ScrollToTopButton />

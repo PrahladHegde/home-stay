@@ -16,7 +16,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-3 font-serif text-sm italic tracking-[0.2em] text-brand-beige sm:mb-4 sm:text-base"
+          className="mb-3 rounded-md bg-black/30 px-4 py-2 font-serif text-sm italic tracking-[0.2em] text-white backdrop-blur-sm sm:mb-4 sm:text-base"
         >
           {heroContent.eyebrow}
         </motion.span>
@@ -24,16 +24,14 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mb-7 font-serif text-4xl font-bold leading-tight sm:text-5xl md:mb-8 md:text-7xl"
+          className="mb-7 font-serif text-[2.25rem] font-bold leading-tight sm:text-[2.875rem] md:mb-8 md:text-[4.375rem]"
         >
           {heroContent.title}
         </motion.h1>
         <div className="flex flex-col items-center gap-3 sm:flex-row">
-          <Button variant="outline">{heroContent.primaryCtaLabel}</Button>
+          {/* <Button variant="outline">{heroContent.primaryCtaLabel}</Button> */}
           <a
-            href={bookingFormUrl}
-            target="_blank"
-            rel="noreferrer"
+            href="#rooms"
             className="rounded-md bg-brand-beige px-8 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-brand-dark"
           >
             {heroContent.bookingCtaLabel}

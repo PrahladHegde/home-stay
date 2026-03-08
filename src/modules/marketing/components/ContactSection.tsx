@@ -21,12 +21,14 @@ function ContactCard({
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ type: 'spring', stiffness: 110, damping: 13 }}
       viewport={{ once: true, amount: 0.32 }}
-      className={`min-w-[82vw] snap-center rounded-2xl border border-brand-dark/10 bg-gradient-to-br p-5 text-left shadow-sm sm:min-w-[70vw] md:min-w-0 md:bg-white md:p-6 ${mobileTone ?? 'from-white to-brand-light'}`}
+      className={`rounded-2xl border border-brand-dark/10 bg-gradient-to-br p-5 text-left shadow-sm md:bg-white md:p-6 ${mobileTone ?? 'from-white to-brand-light'}`}
     >
-      <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-dark text-white">
-        {icon}
+      <div className="mb-4 flex items-center gap-3">
+        <div className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
+          {icon}
+        </div>
+        <h3 className="font-serif text-xl text-brand-dark sm:text-2xl">{title}</h3>
       </div>
-      <h3 className="font-serif text-xl text-brand-dark sm:text-2xl">{title}</h3>
       <div className="mt-3 text-sm leading-relaxed text-brand-text">{children}</div>
     </motion.article>
   );
@@ -57,7 +59,7 @@ export function ContactSection() {
           subtitle={contactContent.sectionSubtitle}
         />
 
-        <div className="-mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
           {contactContent.cards.map((card) => (
             <ContactCard
               key={card.title}

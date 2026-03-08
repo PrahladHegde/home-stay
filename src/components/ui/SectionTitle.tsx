@@ -20,7 +20,7 @@ export function SectionTitle({
   return (
     <div className={`mb-9 md:mb-12 ${alignClass}`}>
       {subtitle && (
-        <span className={`mb-3 block text-[0.65rem] font-bold uppercase tracking-[0.2em] sm:text-xs ${subColor}`}>
+        <span className={`mb-3 block text-[0.6875rem] font-bold uppercase tracking-[0.2em] sm:text-[0.8125rem] ${subColor}`}>
           {subtitle}
         </span>
       )}
