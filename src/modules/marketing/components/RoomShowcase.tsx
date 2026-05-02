@@ -2,7 +2,6 @@ import { Button } from '../../../components/ui/Button';
 import { SectionTitle } from '../../../components/ui/SectionTitle';
 import { roomInventory, roomSectionContent } from '../data/content';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const RoomShowcase = () => {

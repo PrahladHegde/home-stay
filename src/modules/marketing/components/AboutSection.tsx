@@ -1,4 +1,3 @@
-import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SectionTitle } from '../../../components/ui/SectionTitle';
 import { aboutContent } from '../data/content';

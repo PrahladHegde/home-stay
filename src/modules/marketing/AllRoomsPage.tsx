@@ -1,4 +1,3 @@
-import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';

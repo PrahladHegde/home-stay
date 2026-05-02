@@ -1,10 +1,10 @@
 import type { MarketingNavLink, Room } from '../types';
 
 export const propertyConfig = {
-  name: 'MALENADU HOMESTAY',
+  name: 'HILL GROVES HOMESTAY',
   location: 'Thirthahalli',
   description:
-    'Experience the perfect blend of nature and luxury at No Name Homestay. Nestled on the serene shores of a pristine lake, our homestay offers an escape from the ordinary. We focus on sustainability, luxury, and authentic local experiences. Whether you are hiking the nearby trails or relaxing in our spa, you will find peace here.',
+    'Experience the perfect blend of nature and comfort at Hill Groves Homestay. Nestled in the lush surroundings of Thirthahalli, our homestay offers a peaceful escape from the rush of daily life. We focus on warm hospitality, serene landscapes, and authentic local experiences so every stay feels relaxed, memorable, and close to nature.',
 }
 
 export const siteConfig = {
@@ -36,7 +36,7 @@ export const aboutContent = {
   sectionTitle: 'Enjoy Your Stay',
   sectionSubtitle: 'About Homestay',
   description:
-    'This homestay was born from a deep love for the rains, forests, and quiet life of Thirthahalli. Growing up with the beauty of the Malnad region, I wanted to create a place where others could slow down, breathe fresh air, and experience the charm of this land. Our home is not just a stay—it’s a small window into the peaceful rhythm of Malenadu.',
+    'Hill Groves Homestay was born from a deep love for the rains, forests, and quiet life of Thirthahalli. Inspired by the beauty of this region, we created a place where guests can slow down, breathe fresh air, and reconnect with nature. Our home is not just a stay, but a peaceful experience shaped by local warmth and the calm rhythm of the hills.',
   imageUrl:
     'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop',
   imageAlt: 'Hotel View',
@@ -173,7 +173,7 @@ export const contactContent = {
       type: 'email',
       title: 'Email',
       mobileTone: 'from-emerald-50 to-teal-100',
-      lines: ['hello@nonamehomestay.com', 'bookings@nonamehomestay.com'],
+      lines: ['hillgroveshomestay@gmail.com'],
     },
     {
       type: 'social',

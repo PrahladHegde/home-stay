@@ -1,6 +1,5 @@
-import { Button } from '../../../components/ui/Button';
 import { motion } from 'framer-motion';
-import { bookingFormUrl, heroContent } from '../data/content';
+import { heroContent } from '../data/content';
 
 export const HeroSection = () => {
   return (
