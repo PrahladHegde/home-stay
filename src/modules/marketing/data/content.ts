@@ -14,7 +14,7 @@ export const siteConfig = {
 };
 
 export const bookingFormUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLScExampleBookingFormUrl/viewform';
+  'https://docs.google.com/forms/d/e/1FAIpQLSeEupfw_fM_q_q0aVN6vrLH0UriGqNppPrrFFRerNJbMgEXfQ/viewform?usp=publish-editor';
 
 export const heroContent = {
   eyebrow: 'The Ultimate Malenadu Experience',
