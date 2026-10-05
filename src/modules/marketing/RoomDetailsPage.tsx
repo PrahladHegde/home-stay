@@ -15,9 +15,10 @@ import {
   Wifi,
   X,
 } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { SectionTitle } from '../../components/ui/SectionTitle';
+import { ResponsiveImage } from '../../components/ui/ResponsiveImage';
 import { bookingFormUrl, findRoomBySlug, roomDetailsContent } from './data/content';
 import { Footer } from './components/Footer';
 import { TopNav } from './components/TopNav';
@@ -62,12 +63,7 @@ export function RoomDetailsPage() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const gallery = useMemo(() => {
-    if (!room) {
-      return [];
-    }
-    return room.galleryImages.length > 0 ? room.galleryImages : [room.imageUrl];
-  }, [room]);
+  const gallery = room?.galleryImages ?? [];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -77,7 +73,9 @@ export function RoomDetailsPage() {
     return <Navigate replace to="/" />;
   }
 
-  const activeImage = gallery[activeImageIndex] ?? room.imageUrl;
+  const activeImage = gallery[activeImageIndex];
+  const activeAlt = activeImage ? `${room.title} - ${activeImage.label}` : room.title;
+  const hasMultipleImages = gallery.length > 1;
   const nextImage = () =>
     setActiveImageIndex((current) => (current + 1) % gallery.length);
   const prevImage = () =>
@@ -95,12 +93,13 @@ export function RoomDetailsPage() {
     <main className="min-h-screen bg-brand-light">
       <TopNav />
       <section className="relative h-[52vh] min-h-[360px] w-full overflow-hidden">
-        <img
-          src={activeImage}
+        <ResponsiveImage
+          key={activeImage?.id}
+          image={activeImage}
           alt={room.title}
+          sizes="100vw"
           className="h-full w-full object-cover"
-          loading="eager"
-          decoding="async"
+          priority
         />
         <div className="absolute inset-0 bg-brand-dark/55" />
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-7xl px-4 pb-8 text-white sm:px-6 md:pb-10">
@@ -151,52 +150,57 @@ export function RoomDetailsPage() {
               alignment="left"
             />
             <div className="relative overflow-hidden rounded-2xl bg-brand-dark">
-              <img
-                src={activeImage}
-                alt={`${room.title} gallery`}
+              <ResponsiveImage
+                key={activeImage?.id}
+                image={activeImage}
+                alt={activeAlt}
+                sizes="(min-width: 1024px) 60vw, 100vw"
                 className="h-[290px] w-full object-cover sm:h-[420px]"
-                loading="lazy"
-                decoding="async"
               />
-              <button
-                type="button"
-                onClick={prevImage}
-                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/45 p-2 text-white hover:bg-black/65"
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                type="button"
-                onClick={nextImage}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/45 p-2 text-white hover:bg-black/65"
-                aria-label="Next image"
-              >
-                <ChevronRight size={18} />
-              </button>
-              <button
-                type="button"
-                onClick={() => setIsExpanded(true)}
-                className="absolute bottom-3 right-3 rounded-full bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-dark"
-              >
-                Expand
-              </button>
+              {hasMultipleImages ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={prevImage}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/45 p-2 text-white hover:bg-black/65"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={nextImage}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/45 p-2 text-white hover:bg-black/65"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
+                </>
+              ) : null}
+              {activeImage ? (
+                <button
+                  type="button"
+                  onClick={() => setIsExpanded(true)}
+                  className="absolute bottom-3 right-3 rounded-full bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-dark"
+                >
+                  Expand
+                </button>
+              ) : null}
             </div>
 
             <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
               {gallery.map((image, index) => (
                 <button
-                  key={image}
+                  key={image.id}
                   type="button"
                   onClick={() => setActiveImageIndex(index)}
                   className={`overflow-hidden rounded-lg border-2 ${index === activeImageIndex ? 'border-brand-beige' : 'border-transparent'}`}
                 >
-                  <img
-                    src={image}
-                    alt={`${room.title} thumbnail ${index + 1}`}
+                  <ResponsiveImage
+                    image={image}
+                    alt={`${room.title} - ${image.label}`}
+                    sizes="(min-width: 640px) 25vw, 33vw"
                     className="h-20 w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
                   />
                 </button>
               ))}
@@ -273,7 +277,7 @@ export function RoomDetailsPage() {
         </aside>
       </section>
 
-      {isExpanded ? (
+      {isExpanded && activeImage ? (
         <div className="fixed inset-0 z-[100] bg-black/90 p-4">
           <button
             type="button"
@@ -283,27 +287,35 @@ export function RoomDetailsPage() {
           >
             <X size={20} />
           </button>
-          <button
-            type="button"
-            onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
-            aria-label="Previous image"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            type="button"
-            onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
-            aria-label="Next image"
-          >
-            <ChevronRight size={24} />
-          </button>
+          {hasMultipleImages ? (
+            <>
+              <button
+                type="button"
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                type="button"
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
+                aria-label="Next image"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </>
+          ) : null}
           <div className="grid h-full place-items-center">
-            <img
-              src={activeImage}
-              alt={`${room.title} expanded`}
+            <ResponsiveImage
+              key={activeImage.id}
+              image={activeImage}
+              alt={activeAlt}
+              sizes="92vw"
               className="max-h-[88vh] max-w-[92vw] object-contain"
+              style={{ backgroundImage: 'none' }}
+              priority
             />
           </div>
         </div>

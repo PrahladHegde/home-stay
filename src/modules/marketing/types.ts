@@ -17,13 +17,25 @@ export interface Amenity {
   icon: AmenityIconKey;
 }
 
+export interface ImageAsset {
+  id: string;
+  label: string;
+  /** Path prefix; variants are `${src}-${width}.webp`. */
+  src: string;
+  widths: number[];
+  width: number;
+  height: number;
+  /** Tiny inline WebP shown while the real image loads. */
+  blur: string;
+}
+
 export interface Room {
   id: number;
   slug: string;
   title: string;
   pricePerNightInr: number;
-  imageUrl: string;
-  galleryImages: string[];
+  image?: ImageAsset;
+  galleryImages: ImageAsset[];
   description: string;
   amenities: Amenity[];
   mainFeatures: string[];

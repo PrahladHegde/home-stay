@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { SectionTitle } from '../../../components/ui/SectionTitle';
+import { ResponsiveImage } from '../../../components/ui/ResponsiveImage';
 import { aboutContent } from '../data/content';
 
 export const AboutSection = () => {
@@ -48,11 +49,10 @@ export const AboutSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="md:w-1/2 relative"
           >
-            <img 
-              src={aboutContent.imageUrl}
+            <ResponsiveImage
+              image={aboutContent.image}
               alt={aboutContent.imageAlt}
-              loading="lazy"
-              decoding="async"
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="w-full h-auto shadow-lg"
             />
             {/* <div className="absolute -top-10 -right-10 bg-brand-beige p-8 text-white text-center shadow-lg hidden md:block">

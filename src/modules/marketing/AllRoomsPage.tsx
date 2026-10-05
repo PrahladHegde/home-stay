@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/ui/Button';
 import { SectionTitle } from '../../components/ui/SectionTitle';
+import { ResponsiveImage } from '../../components/ui/ResponsiveImage';
 import { Footer } from './components/Footer';
 import { TopNav } from './components/TopNav';
 import { roomInventory, roomSectionContent, roomsPageContent } from './data/content';
@@ -47,11 +48,10 @@ export function AllRoomsPage() {
               className="flex flex-col overflow-hidden rounded-2xl border border-brand-dark/10 bg-white shadow-sm"
             >
               <div className="relative h-72">
-                <img
-                  src={room.imageUrl}
+                <ResponsiveImage
+                  image={room.image}
                   alt={room.title}
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="h-full w-full object-cover"
                 />
                 {/* <div className="absolute left-3 top-3 rounded-full bg-brand-dark/90 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white">

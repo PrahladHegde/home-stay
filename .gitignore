@@ -23,5 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# Full-size originals; run `npm run images` to generate public/images
+home_stay_original_photos/
+
 # Kiro IDE
 .kiro

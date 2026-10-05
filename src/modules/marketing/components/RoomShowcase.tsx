@@ -1,5 +1,6 @@
 import { Button } from '../../../components/ui/Button';
 import { SectionTitle } from '../../../components/ui/SectionTitle';
+import { ResponsiveImage } from '../../../components/ui/ResponsiveImage';
 import { roomInventory, roomSectionContent } from '../data/content';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -28,11 +29,10 @@ export const RoomShowcase = () => {
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-brand-dark/10 bg-white text-left shadow-sm"
             >
               <div className="relative h-72 overflow-hidden sm:h-80 lg:h-96">
-                <img
-                  src={room.imageUrl}
+                <ResponsiveImage
+                  image={room.image}
                   alt={room.title}
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 

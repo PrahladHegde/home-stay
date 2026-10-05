@@ -49,6 +49,36 @@ This includes:
 
 If someone maintains this app later, this is the first file to update.
 
+## Photos And Image Optimization
+
+Original photos are large (about 15 MB each), so the site never serves them directly. A script converts them into small, responsive WebP files.
+
+- Generated files: `public/images/` (committed, served by Vercel with 1-year caching)
+- Generated manifest: `src/modules/marketing/data/images.generated.ts` (committed, do not edit by hand)
+- Script: `scripts/optimize-images.mjs`, component: `src/components/ui/ResponsiveImage.tsx`
+
+Each photo is saved at widths 320, 640, 1024, 1600 and 2400 px (WebP, quality 85) plus a tiny blurred preview. The browser picks the smallest size that looks sharp on the visitor's screen. Originals are never modified.
+
+### Adding, replacing or removing photos
+
+1. Add, replace or delete files in `home_stay_original_photos/`.
+2. Run `npm run images`.
+3. Commit `public/images/` and `images.generated.ts`, then push.
+
+### File naming rules
+
+Names are case-insensitive; words are separated by `_`, `-` or spaces. Allowed extensions: `.jpg`, `.jpeg`, `.png`, `.webp`.
+
+- A photo belongs to the room named by the start of its file name. Optional endings `_Bathroom` and `_Study_Table`, and a trailing number, are ignored when grouping.
+  - `Twin_Room_1`, `Twin_Room_Bathroom_2`, `Twin_Room_Study_Table` all go to the `twin-room` group.
+  - A new `Twin_Room_3.JPG` appears in that gallery automatically.
+- The first file in a group (sorted by name, so `Room.JPG` or `Room_1.JPG`) is the card/cover image. Use `_1`, `_2`, ... to control gallery order.
+- Use a different start of the name for a different room or group (for example `Hall_1.JPG` becomes group `hall`).
+- A room in `content.ts` picks up its photos with `imageGroup('<group>')`, for example `imageGroup('twin-room')`. For a new room, add photos with that prefix, run the script, then add the room using that group name. A wrong or missing group name does not break the site: that room shows a "Photo unavailable" placeholder and the browser console logs an error naming the group.
+- Replacing a photo: keep the same file name or delete the old one. Stale generated files are removed on the next run.
+
+Tuning: change `WIDTHS` and `WEBP_QUALITY` at the top of the script.
+
 ## Project Structure (High Level)
 
 - `src/app/AppRouter.tsx`: app routes

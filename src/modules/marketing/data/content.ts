@@ -1,4 +1,14 @@
-import type { MarketingNavLink, Room } from '../types';
+import type { ImageAsset, MarketingNavLink, Room } from '../types';
+import { imageManifest } from './images.generated';
+
+function imageGroup(group: string): ImageAsset[] {
+  const images = imageManifest[group];
+  if (!images?.length) {
+    console.error(`No images for "${group}". Add photos named ${group}_*.jpg and run "npm run images".`);
+    return [];
+  }
+  return images;
+}
 
 export const propertyConfig = {
   name: 'HILL GROVES HOMESTAY',
@@ -37,9 +47,8 @@ export const aboutContent = {
   sectionSubtitle: 'About Homestay',
   description:
     'Hill Groves Homestay was born from a deep love for the rains, forests, and quiet life of Thirthahalli. Inspired by the beauty of this region, we created a place where guests can slow down, breathe fresh air, and reconnect with nature. Our home is not just a stay, but a peaceful experience shaped by local warmth and the calm rhythm of the hills.',
-  imageUrl:
-    'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop',
-  imageAlt: 'Hotel View',
+  image: imageGroup('about-home-stay')[0],
+  imageAlt: 'Hill Groves Homestay',
   stats: [
     { value: '15+', label: 'Years of Service' },
     { value: '50+', label: 'Luxury Rooms' },
@@ -193,11 +202,8 @@ export const roomInventory: Room[] = [
     slug: 'premium-suite',
     title: 'Premium Suite',
     pricePerNightInr: 20000,
-    galleryImages: [
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1965&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?q=80&w=2069&auto=format&fit=crop',
-    ],
+    image: imageGroup('premium-suite')[0],
+    galleryImages: imageGroup('premium-suite'),
     description:
       'A spacious and elegant suite designed for a relaxed premium stay, with abundant natural light, cozy interiors, and a calm homely feel. Ideal for guests who want added comfort with air conditioning and thoughtfully designed spaces.',
     amenities: [
@@ -230,19 +236,14 @@ export const roomInventory: Room[] = [
     mainFeature: 'Elegant air-conditioned suite for a premium experience',
     starRating: 5,
     tags: ['King Bed', 'Air Conditioned', 'Breakfast Included'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop',
   },
   {
     id: 2,
     slug: 'double-bedroom',
     title: 'Double Bedroom',
     pricePerNightInr: 18000,
-    galleryImages: [
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1974&auto=format&fit=crop',
-    ],
+    image: imageGroup('double-bedroom')[0],
+    galleryImages: imageGroup('double-bedroom'),
     description:
       'A warm and comfortable double bedroom with good natural light, spacious interiors, and a cozy atmosphere that makes guests feel at home. Perfect for a peaceful stay with all essential comforts.',
     amenities: [
@@ -275,19 +276,14 @@ export const roomInventory: Room[] = [
     mainFeature: 'Comfortable and inviting atmosphere',
     starRating: 4,
     tags: ['King Bed', 'Air Conditioned', 'Breakfast Included'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2025&auto=format&fit=crop',
   },
   {
     id: 3,
     slug: 'family-room',
     title: 'Family Room',
     pricePerNightInr: 22000,
-    galleryImages: [
-      'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1974&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop',
-    ],
+    image: imageGroup('family-room')[0],
+    galleryImages: imageGroup('family-room'),
     description:
       'A large, welcoming family room with generous space, good light, and a cozy atmosphere for a comfortable stay. Designed to bring together comfort and convenience, it is perfect for families looking for a homely retreat.',
     amenities: [
@@ -320,19 +316,14 @@ export const roomInventory: Room[] = [
     mainFeature: 'Spacious family-friendly layout',
     starRating: 4,
     tags: ['Family Room', 'Spacious', 'Breakfast Included'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1974&auto=format&fit=crop',
   },
   {
     id: 4,
     slug: 'twin-bed-room',
     title: 'Twin Bed Room',
     pricePerNightInr: 16000,
-    galleryImages: [
-      'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1974&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2070&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=2070&auto=format&fit=crop',
-    ],
+    image: imageGroup('twin-room')[0],
+    galleryImages: imageGroup('twin-room'),
     description:
       'A bright and spacious twin bed room designed for convenience and comfort, offering a cozy setting for shared stays. Its practical layout and peaceful ambiance make it ideal for friends or travel companions.',
     amenities: [
@@ -365,8 +356,6 @@ export const roomInventory: Room[] = [
     mainFeature: 'Spacious twin bed setup for shared stays',
     starRating: 4,
     tags: ['Twin Beds', 'Shared Room', 'Breakfast Included'],
-    imageUrl:
-      'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1974&auto=format&fit=crop',
   },
 ];
 
